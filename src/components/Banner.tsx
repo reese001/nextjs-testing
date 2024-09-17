@@ -13,7 +13,7 @@ export default function Banner() {
           <div className="text-sm">If it&apos;s not Antonio&apos;s, it&apos;s rubbish!</div>
         </header>
 
-        <div className="shrink-0 hidden md:block">
+        <div className="hidden md:block">
           <i className="fab fa-facebook-square fa-2x ml-1"></i>
           <i className="fab fa-twitter-square fa-2x ml-1"></i>
           <i className="fab fa-instagram fa-2x ml-1"></i>
