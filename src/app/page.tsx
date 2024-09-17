@@ -1,3 +1,5 @@
+"use client";
+
 import Banner from "@/components/Banner";
 import OrdersReport from "@/components/OrdersReport";
 
