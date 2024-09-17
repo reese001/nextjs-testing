@@ -1,13 +1,7 @@
-"use client"
-
 import Banner from "@/components/Banner";
+import OrdersReport from "@/components/OrdersReport";
 
 export default function Home() {
-  // retrieve server sided script
-  const RETRIEVE_SCRIPT:string = "https://www.seanmorrow.ca/_lessons/retrieveOrder.php";
-
-  
-
 
   // ---------------------------- rendering to DOM
   return (
@@ -38,7 +32,7 @@ export default function Home() {
 
         <div id="output" className="divide-dashed divide-y-2 divide-accent">
 
-          <>No orders retrieved...</>
+        <OrdersReport />
 
         </div>
       </div>
