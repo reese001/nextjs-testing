@@ -34,7 +34,7 @@ export default function Home() {
 
         <div id="output" className="divide-dashed divide-y-2 divide-accent">
 
-        <OrdersReport />
+          <OrdersReport />
 
         </div>
       </div>
