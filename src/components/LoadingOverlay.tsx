@@ -1,8 +1,8 @@
 "use client"
 
-// need to install spinners-react for this component to work
-// with docker - must shut down, clear volumes, and rebuild / spinup all container
-import { SpinnerCircular } from 'spinners-react';
+// need to install react-spinners for this component to work
+// with docker - must shut down, clear volumes, and rebuild / spinup all containers
+import PuffLoader from 'react-spinners/PuffLoader';
 
 // included this here and not in quotes.model.ts so that LoadingOverlay component is easily reusable in other apps
 interface LoadingOverlayProps {
@@ -18,11 +18,9 @@ export default function LoadingOverlay({show = true, bgColor = "#000000", spinne
         ? 
         <div className="flex justify-center items-center fixed z-50 inset-0 w-full h-full" style={{backgroundColor:bgColor}}>
             {(showSpinner) ? 
-            <SpinnerCircular 
+            <PuffLoader 
                 color={spinnerColor}
-                secondaryColor={bgColor}
-                thickness={150}
-                size={75} />
+                size={50} />
             : <div></div>}
         </div>
         : <div></div>
