@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { getJSONData } from "@/tools/Toolkit";
 import { Orders, Order } from "@/tools/orders.model";
+import LoadingOverlay from "./LoadingOverlay";
 
 export default function OrdersReport({
     setAppState,
@@ -36,7 +37,9 @@ export default function OrdersReport({
 
     if (appState == 1) {
         return <>No orders retrieved...</>;
-    } else if (appState == 3) {
-        return <p>Render orders here</p>;
+    } else if (appState == 2) {
+        return <LoadingOverlay show={appState == 2} bgColor="#EDEDED" />;
+    } else {
+        return <>Orders retrieved</>;
     }
 }

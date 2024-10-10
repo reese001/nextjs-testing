@@ -18,10 +18,10 @@ export default function Home() {
     // ---------------------------- rendering to DOM
     return (
         <main className="grid grid-rows-1 grid-cols-1 gap-0 text-content">
-            <LoadingOverlay
+            {/* <LoadingOverlay
                 show={appState == 2 ? true : false}
                 bgColor="#b82308"
-            />
+            /> */}
 
             <Banner />
 
@@ -36,12 +36,18 @@ export default function Home() {
                     Click the &quot;Get Orders&quot; button below to view all
                     current orders that need to be delivered.
                     <div>
-                        <button
-                            className="bg-accent border-none rounded-md p-2.5 text-white hover:bg-greyContent mt-5"
-                            onClick={showOrders}
-                        >
-                            Get Orders
-                        </button>
+                        {appState != 2 ? (
+                            <button
+                                className="bg-accent border-none rounded-md p-2.5 text-white hover:bg-greyContent mt-5"
+                                onClick={showOrders}
+                            >
+                                Get Orders
+                            </button>
+                        ) : (
+                            <button className="bg-greyContent border-none rounded-md p-2.5 text-white mt-5 cursor-default">
+                                Get Orders
+                            </button>
+                        )}
                     </div>
                 </div>
                 <div className="shrink-0 text-lg text-right text-greyContent hidden md:block">
