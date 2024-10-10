@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getJSONData } from "@/tools/Toolkit";
 import { Orders, Order } from "@/tools/orders.model";
 import LoadingOverlay from "./LoadingOverlay";
+import OrderDetails from "./OrderDetails";
 
 export default function OrdersReport({
     setAppState,
@@ -39,7 +40,25 @@ export default function OrdersReport({
         return <>No orders retrieved...</>;
     } else if (appState == 2) {
         return <LoadingOverlay show={appState == 2} bgColor="#EDEDED" />;
-    } else {
-        return <>Orders retrieved</>;
+    } else if (appState == 3) {
+        return (
+            <>
+                <div className="divide-dotted divide-red-700 divide-y-2">
+                    {orders.map((order: Order, i: number) => (
+                        <OrderDetails
+                            key={i}
+                            id={order.id}
+                            name={order.name}
+                            address={order.address}
+                            city={order.city}
+                            size={order.size}
+                            delivered={order.delivered}
+                            toppings={order.toppings}
+                            notes={order.notes}
+                        />
+                    ))}
+                </div>
+            </>
+        );
     }
 }

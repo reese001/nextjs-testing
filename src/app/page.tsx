@@ -59,10 +59,7 @@ export default function Home() {
             </aside>
 
             <div className="bg-greyAccent p-10">
-                <div
-                    id="output"
-                    className="divide-dashed divide-y-2 divide-accent"
-                >
+                <div id="output">
                     <OrdersReport
                         setAppState={setAppState}
                         appState={appState}
